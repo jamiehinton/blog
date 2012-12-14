@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[A broad minded techy]]></title>
-  <link href="http://jamiehinton.co.uk/atom.xml" rel="self"/>
-  <link href="http://jamiehinton.co.uk/"/>
-  <updated>2012-12-09T20:59:58+00:00</updated>
-  <id>http://jamiehinton.co.uk/</id>
+  <link href="http://jamiehinton.github.com/blog/atom.xml" rel="self"/>
+  <link href="http://jamiehinton.github.com/blog/"/>
+  <updated>2012-12-14T19:36:55+00:00</updated>
+  <id>http://jamiehinton.github.com/blog/</id>
   <author>
     <name><![CDATA[Jamie Hinton]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[my new blog]]></title>
-    <link href="http://jamiehinton.co.uk/blog/2012/12/09/my-new-blog/"/>
+    <link href="http://jamiehinton.github.com/blog/blog/2012/12/09/my-new-blog/"/>
     <updated>2012-12-09T20:36:00+00:00</updated>
-    <id>http://jamiehinton.co.uk/blog/2012/12/09/my-new-blog</id>
+    <id>http://jamiehinton.github.com/blog/blog/2012/12/09/my-new-blog</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>

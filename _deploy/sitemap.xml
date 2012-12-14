@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://jamiehinton.co.uk/blog/2012/12/09/my-new-blog/</loc>
+        <loc>http://jamiehinton.github.com/blog/blog/2012/12/09/my-new-blog/</loc>
         <lastmod>2012-12-09T20:36:45+00:00</lastmod>
     </url>
     <url>
-        <loc>http://jamiehinton.co.uk/blog/archives/</loc>
+        <loc>http://jamiehinton.github.com/blog/blog/archives/</loc>
         <lastmod>2012-12-09T20:36:45+00:00</lastmod>
     </url>
     <url>
-        <loc>http://jamiehinton.co.uk/</loc>
+        <loc>http://jamiehinton.github.com/blog/</loc>
         <lastmod>2012-12-09T20:36:45+00:00</lastmod>
     </url>
     <url>
-        <loc>http://jamiehinton.co.uk/about/</loc>
+        <loc>http://jamiehinton.github.com/blog/about/</loc>
         <lastmod>2012-12-09T20:49:49+00:00</lastmod>
     </url>
 </urlset>
