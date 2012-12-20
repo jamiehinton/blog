@@ -4,7 +4,7 @@
   <title><![CDATA[A broad minded techy]]></title>
   <link href="http://jamiehinton.github.com/blog/atom.xml" rel="self"/>
   <link href="http://jamiehinton.github.com/blog/"/>
-  <updated>2012-12-16T20:51:05+00:00</updated>
+  <updated>2012-12-20T14:49:47+00:00</updated>
   <id>http://jamiehinton.github.com/blog/</id>
   <author>
     <name><![CDATA[Jamie Hinton]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[sdfsdf sdfsdf ]]></title>
+    <link href="http://jamiehinton.github.com/blog/blog/2012/12/20/sdfsdf-sdfsdf/"/>
+    <updated>2012-12-20T14:49:00+00:00</updated>
+    <id>http://jamiehinton.github.com/blog/blog/2012/12/20/sdfsdf-sdfsdf</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[android sliding menu]]></title>
