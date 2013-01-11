@@ -22,6 +22,6 @@ There are a few little gotchas in that now it won't look for the default feed an
 Firtly the simple answer to it not looking at the default Nuget feed is to just addit to the list and the format for adding multiple feeds is to have each feed in speech marks separated by a semi-colon.
 
 Here is an example:
-'''
+{% codeblock %}
 <PackageSources>"https://nuget.org/api/v2/";"https://custom-nuget-feed.com/nuget"</PackageSources>
-'''
+{% endcodeblock %}

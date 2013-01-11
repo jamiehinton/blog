@@ -4,7 +4,7 @@
   <title><![CDATA[A broad minded techy]]></title>
   <link href="http://jamiehinton.github.com/blog/atom.xml" rel="self"/>
   <link href="http://jamiehinton.github.com/blog/"/>
-  <updated>2013-01-11T14:52:25+00:00</updated>
+  <updated>2013-01-11T15:50:23+00:00</updated>
   <id>http://jamiehinton.github.com/blog/</id>
   <author>
     <name><![CDATA[Jamie Hinton]]></name>
@@ -12,5 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[custom nuget feed configuration for Azure builds]]></title>
+    <link href="http://jamiehinton.github.com/blog/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/"/>
+    <updated>2013-01-11T14:31:00+00:00</updated>
+    <id>http://jamiehinton.github.com/blog/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds</id>
+    <content type="html"><![CDATA[<p>When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom custom Nuget feeds.</p>
+
+<p>By default, Nuget will look at the default feed which at the time of writing is &#8220;https://nuget.org/api/v2/&#8221;.</p>
+
+<p>The problem is that it won&#8217;t look at your custom feed URL and the build will fail.</p>
+
+<p>To add your custom feed URL open the NuGet.targets file found in the .nuget folder in the root of the solution.</p>
+
+<p>Find the XML node named &#8216;PackageSources&#8217; which will be empty. Simple add your custom Nuget feed URL there.</p>
+
+<p>There are a few little gotchas in that now it won&#8217;t look for the default feed and whant is the format for adding multiple feeds?</p>
+
+<p>Firtly the simple answer to it not looking at the default Nuget feed is to just addit to the list and the format for adding multiple feeds is to have each feed in speech marks separated by a semi-colon.</p>
+
+<p>Here is an example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;PackageSources>"https://nuget.org/api/v2/";"https://custom-nuget-feed.com/nuget"&lt;/PackageSources></span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
 </feed>
