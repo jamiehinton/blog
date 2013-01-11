@@ -7,7 +7,7 @@ published: true
 categories: [Nuget, Azure]
 ---
 
-When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom custom Nuget feeds.
+When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom Nuget feeds.
 
 By default, Nuget will look at the default feed which at the time of writing is "https://nuget.org/api/v2/".
 
