@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Nuget | A broad minded techy]]></title>
   <link href="http://jamiehinton.github.com/blog/blog/categories/nuget/atom.xml" rel="self"/>
   <link href="http://jamiehinton.github.com/blog/"/>
-  <updated>2013-01-11T15:36:47+00:00</updated>
+  <updated>2013-01-11T15:38:13+00:00</updated>
   <id>http://jamiehinton.github.com/blog/</id>
   <author>
     <name><![CDATA[Jamie Hinton]]></name>
@@ -33,9 +33,9 @@
 <p>Firtly the simple answer to it not looking at the default Nuget feed is to just addit to the list and the format for adding multiple feeds is to have each feed in speech marks separated by a semi-colon.</p>
 
 <p>Here is an example:
-''' xml Package Source Example
+<figure>
 <PackageSources>"https://nuget.org/api/v2/";"https://custom-nuget-feed.com/nuget"</PackageSources>
-'''</p>
+</figure></p>
 ]]></content>
   </entry>
   
