@@ -17,11 +17,15 @@ To add your custom feed URL open the NuGet.targets file found in the .nuget fold
 
 Find the XML node named 'PackageSources' which will be empty. Simple add your custom Nuget feed URL there. 
 
-There are a few little gotchas. It now won't look for the default feed and what is the format for adding multiple feeds?
+There are a few little gotchas. It now won't look for the default feed and it's not clear what the format should be to add multiple feeds.
 
-Firtly the simple answer to it not looking at the default Nuget feed is to just addit to the list and the format for adding multiple feeds is to have each feed in speech marks separated by a semi-colon.
+Firtly the simple answer to it not looking at the default Nuget feed is to just add it to the PackageSourcesl.
+
+The format for adding multiple feeds is to have each feed in speech marks separated by a semi-colon.
 
 Here is an example:
 {% codeblock %}
 <PackageSources>"https://nuget.org/api/v2/";"https://custom-nuget-feed.com/nuget"</PackageSources>
 {% endcodeblock %}
+
+Once pushed to Azure then it should find your package source along with the default and pull in all the required dependencies.
