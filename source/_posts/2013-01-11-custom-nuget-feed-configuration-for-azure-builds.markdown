@@ -3,7 +3,7 @@ layout: post
 title: "custom nuget feed configuration for Azure builds"
 date: 2013-01-11 14:31
 comments: true
-published: false
+published: true
 categories: [Nuget, Azure]
 ---
 
