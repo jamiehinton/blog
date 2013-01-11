@@ -2,42 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[A broad minded techy]]></title>
-  <link href="http://blog.jamiehinton.co.uk/atom.xml" rel="self"/>
-  <link href="http://blog.jamiehinton.co.uk/"/>
-  <updated>2012-12-16T20:24:05+00:00</updated>
-  <id>http://blog.jamiehinton.co.uk/</id>
+  <link href="http://jamiehinton.github.com/blog/atom.xml" rel="self"/>
+  <link href="http://jamiehinton.github.com/blog/"/>
+  <updated>2013-01-11T14:52:25+00:00</updated>
+  <id>http://jamiehinton.github.com/blog/</id>
   <author>
     <name><![CDATA[Jamie Hinton]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[this is a test]]></title>
-    <link href="http://blog.jamiehinton.co.uk/blog/2012/12/16/this-is-a-test/"/>
-    <updated>2012-12-16T20:14:00+00:00</updated>
-    <id>http://blog.jamiehinton.co.uk/blog/2012/12/16/this-is-a-test</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[android sliding menu library]]></title>
-    <link href="http://blog.jamiehinton.co.uk/blog/2012/12/14/android-sliding-menu-library/"/>
-    <updated>2012-12-14T19:42:00+00:00</updated>
-    <id>http://blog.jamiehinton.co.uk/blog/2012/12/14/android-sliding-menu-library</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[my new blog]]></title>
-    <link href="http://blog.jamiehinton.co.uk/blog/2012/12/09/my-new-blog/"/>
-    <updated>2012-12-09T20:36:00+00:00</updated>
-    <id>http://blog.jamiehinton.co.uk/blog/2012/12/09/my-new-blog</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
 </feed>
