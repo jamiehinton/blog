@@ -9,7 +9,7 @@
   <meta name="author" content="Jamie Hinton">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom custom Nuget feeds. By &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,59 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/">Custom Nuget Feed Configuration for Azure Builds</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-11T14:31:00+00:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom custom Nuget feeds.</p>
+
+<p>By default, Nuget will look at the default feed which at the time of writing is &#8220;https://nuget.org/api/v2/&#8221;.</p>
+
+<p>The problem is that it won&#8217;t look at your custom feed URL and the build will fail.</p>
+
+<p>To add your custom feed URL open the NuGet.targets file found in the .nuget folder in the root of the solution.</p>
+
+<p>Find the XML node named &#8216;PackageSources&#8217; which will be empty. Simple add your custom Nuget feed URL there.</p>
+
+<p>There are a few little gotchas in that now it won&#8217;t look for the default feed and whant is the format for adding multiple feeds?</p>
+
+<p>Firtly the simple answer to it not looking at the default Nuget feed is to just addit to the list and the format for adding multiple feeds is to have each feed in speech marks separated by a semi-colon.</p>
+
+<p>Here is an example:
+&#8221;&#8217;
+<PackageSources>&#8220;https://nuget.org/api/v2/&#8221;;&#8221;https://custom-nuget-feed.com/nuget&#8221;</PackageSources>
+&#8221;&#8217;</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -78,6 +131,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/">custom nuget feed configuration for Azure builds</a>
+      </li>
     
   </ul>
 </section>
