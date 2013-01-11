@@ -4,7 +4,7 @@
   <title><![CDATA[A broad minded techy]]></title>
   <link href="http://jamiehinton.github.com/blog/atom.xml" rel="self"/>
   <link href="http://jamiehinton.github.com/blog/"/>
-  <updated>2013-01-11T15:53:11+00:00</updated>
+  <updated>2013-01-11T17:02:11+00:00</updated>
   <id>http://jamiehinton.github.com/blog/</id>
   <author>
     <name><![CDATA[Jamie Hinton]]></name>
@@ -28,7 +28,7 @@
 
 <p>Find the XML node named &#8216;PackageSources&#8217; which will be empty. Simple add your custom Nuget feed URL there.</p>
 
-<p>There are a few little gotchas in that now it won&#8217;t look for the default feed and whant is the format for adding multiple feeds?</p>
+<p>There are a few little gotchas. It now won&#8217;t look for the default feed and what is the format for adding multiple feeds?</p>
 
 <p>Firtly the simple answer to it not looking at the default Nuget feed is to just addit to the list and the format for adding multiple feeds is to have each feed in speech marks separated by a semi-colon.</p>
 
