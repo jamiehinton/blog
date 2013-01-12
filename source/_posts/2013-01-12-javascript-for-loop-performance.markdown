@@ -26,7 +26,7 @@ There are a number of ways to rectify this but they generally resort to the same
 
 Create one inline:
 {% codeblock %}
-for(var i = 0, var l = array.length; i <= j; i++){
+for(var i = 0, var l = array.length; i <= l; i++){
 	console.log(array[i]);
 }
 {% endcodeblock %}
