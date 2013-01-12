@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>custom nuget feed configuration for Azure builds - A broad minded techy</title>
+  <title>JavaScript 'for loop' Performance - A broad minded techy</title>
   <meta name="author" content="Jamie Hinton">
 
   
-  <meta name="description" content="When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom Nuget feeds. By default, &hellip;">
+  <meta name="description" content="I have read about optimising the performance of for loops in JavaScript a number of times but for the first time today I actually remembered to write &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jamiehinton.github.com/blog/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/">
+  <link rel="canonical" href="http://jamiehinton.github.com/blog/blog/2013/01/12/javascript-for-loop-performance/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -69,7 +69,7 @@
   
   <header>
     
-      <h1 class="entry-title">Custom Nuget Feed Configuration for Azure Builds</h1>
+      <h1 class="entry-title">JavaScript 'for Loop' Performance</h1>
     
     
       <p class="meta">
@@ -85,36 +85,62 @@
   
 
 
-<time datetime="2013-01-11T14:31:00+00:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
+<time datetime="2013-01-12T18:23:00+00:00" pubdate data-updated="true">Jan 12<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom Nuget feeds.</p>
+<div class="entry-content"><p>I have read about optimising the performance of for loops in JavaScript a number of times but for the first time today I actually remembered to write one in the correct way.</p>
 
-<p>By default, Nuget will look at the default feed which at the time of writing is &#8220;https://nuget.org/api/v2/&#8221;.</p>
+<p>To compound this learning I thought that I would write this blog post and also hopefully get others to remember this optimisation too.</p>
 
-<p>The problem is that it won&#8217;t look at your custom feed URL and the build will fail.</p>
-
-<p>To add your custom feed URL open the NuGet.targets file found in the .nuget folder in the root of the solution.</p>
-
-<p>Find the XML node named &#8216;PackageSources&#8217; which will be empty. Simple add your custom Nuget feed URL there.</p>
-
-<p>There are a few little gotchas. It now won&#8217;t look for the default feed and it&#8217;s not clear what the format should be to add multiple feeds.</p>
-
-<p>Firtly the simple answer to it not looking at the default Nuget feed is to just add it to the PackageSourcesl.</p>
-
-<p>The format for adding multiple feeds is to have each feed in speech marks separated by a semi-colon.</p>
-
-<p>Here is an example:</p>
+<p>Take this for loop as an example:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;PackageSources>"https://nuget.org/api/v2/";"https://custom-nuget-feed.com/nuget"&lt;/PackageSources></span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var array = new Array();
+</span><span class='line'>array[0] = "jibble";
+</span><span class='line'>array[1] = "flibble";
+</span><span class='line'>for(var i = 0; i &lt;= array.length; i++){
+</span><span class='line'>  console.log(array[i]);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Once pushed to Azure then it should find your package source along with the default and pull in all the required dependencies.</p>
+<p>All looks straight forward enough and probably what we have written many times. The problem is that the array.length will be evaluated on every itteration of the loop. This would be compounded if we had a function there that was doing some other intensive process.</p>
+
+<p>There are a number of ways to rectify this but they generally resort to the same principle, create a variable.</p>
+
+<p>Create one inline:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for(var i = 0, var l = array.length; i &lt;= j; i++){
+</span><span class='line'>  console.log(array[i]);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Or outside the for loop:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var l = array.length
+</span><span class='line'>for(var i = 0; i &lt;= j; i++){
+</span><span class='line'>  console.log(array[i]);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>They both result in the same one but you may find one more readable than the other.</p>
+
+<p>There are plenty of other ways to get even more performance from loops in JavaScript. Just take a read of <a href="https://blogs.oracle.com/greimer/entry/best_way_to_code_a">this article</a>.</p>
 </div>
 
 
@@ -137,12 +163,12 @@
   
 
 
-<time datetime="2013-01-11T14:31:00+00:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
+<time datetime="2013-01-12T18:23:00+00:00" pubdate data-updated="true">Jan 12<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/azure/'>Azure</a>, <a class='category' href='/blog/categories/nuget/'>Nuget</a>
+    <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/optimisation/'>Optimisation</a>
   
 </span>
 
@@ -151,7 +177,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jamiehinton.github.com/blog/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/" data-via="jamiehinton" data-counturl="http://jamiehinton.github.com/blog/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jamiehinton.github.com/blog/blog/2013/01/12/javascript-for-loop-performance/" data-via="jamiehinton" data-counturl="http://jamiehinton.github.com/blog/blog/2013/01/12/javascript-for-loop-performance/" >Tweet</a>
   
   
   
@@ -160,8 +186,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/" title="Previous Post: custom nuget feed configuration for Azure builds">&laquo; custom nuget feed configuration for Azure builds</a>
       
-        <a class="basic-alignment right" href="/blog/2013/01/12/javascript-for-loop-performance/" title="Next Post: JavaScript 'for loop' Performance">JavaScript 'for loop' Performance &raquo;</a>
       
     </p>
   </footer>
@@ -261,8 +287,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://jamiehinton.github.com/blog/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/';
-        var disqus_url = 'http://jamiehinton.github.com/blog/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/';
+        var disqus_identifier = 'http://jamiehinton.github.com/blog/blog/2013/01/12/javascript-for-loop-performance/';
+        var disqus_url = 'http://jamiehinton.github.com/blog/blog/2013/01/12/javascript-for-loop-performance/';
         var disqus_script = 'embed.js';
       
     (function () {

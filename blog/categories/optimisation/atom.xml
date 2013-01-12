@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Optimisation | A broad minded techy]]></title>
+  <link href="http://jamiehinton.github.com/blog/blog/categories/optimisation/atom.xml" rel="self"/>
+  <link href="http://jamiehinton.github.com/blog/"/>
+  <updated>2013-01-12T19:09:53+00:00</updated>
+  <id>http://jamiehinton.github.com/blog/</id>
+  <author>
+    <name><![CDATA[Jamie Hinton]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript 'for loop' Performance]]></title>
+    <link href="http://jamiehinton.github.com/blog/blog/2013/01/12/javascript-for-loop-performance/"/>
+    <updated>2013-01-12T18:23:00+00:00</updated>
+    <id>http://jamiehinton.github.com/blog/blog/2013/01/12/javascript-for-loop-performance</id>
+    <content type="html"><![CDATA[<p>I have read about optimising the performance of for loops in JavaScript a number of times but for the first time today I actually remembered to write one in the correct way.</p>
+
+<p>To compound this learning I thought that I would write this blog post and also hopefully get others to remember this optimisation too.</p>
+
+<p>Take this for loop as an example:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var array = new Array();
+</span><span class='line'>array[0] = "jibble";
+</span><span class='line'>array[1] = "flibble";
+</span><span class='line'>for(var i = 0; i &lt;= array.length; i++){&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>console.log(array[i]);
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>All looks straight forward enough and probably what we have written many times. The problem is that the array.length will be evaluated on every itteration of the loop. This would be compounded if we had a function there that was doing some other intensive process.</p>
+
+<p>There are a number of ways to rectify this but they generally resort to the same principle, create a variable.</p>
+
+<p>Create one inline:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for(var i = 0, var l = array.length; i &lt;= j; i++){&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>console.log(array[i]);
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Or outside the for loop:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var l = array.length
+</span><span class='line'>for(var i = 0; i &lt;= j; i++){&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>console.log(array[i]);
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>They both result in the same one but you may find one more readable than the other.</p>
+
+<p>There are plenty of other ways to get even more performance from loops in JavaScript. Just take a read of <a href="https://blogs.oracle.com/greimer/entry/best_way_to_code_a">this article</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

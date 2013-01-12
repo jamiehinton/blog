@@ -9,7 +9,7 @@
   <meta name="author" content="Jamie Hinton">
 
   
-  <meta name="description" content="When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom custom Nuget feeds. By &hellip;">
+  <meta name="description" content="I have read about optimising the performance of for loops in JavaScript a number of times but for the first time today I actually remembered to write &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +72,90 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/01/12/javascript-for-loop-performance/">JavaScript &#8216;for Loop&#8217; Performance</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-12T18:23:00+00:00" pubdate data-updated="true">Jan 12<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have read about optimising the performance of for loops in JavaScript a number of times but for the first time today I actually remembered to write one in the correct way.</p>
+
+<p>To compound this learning I thought that I would write this blog post and also hopefully get others to remember this optimisation too.</p>
+
+<p>Take this for loop as an example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var array = new Array();
+</span><span class='line'>array[0] = "jibble";
+</span><span class='line'>array[1] = "flibble";
+</span><span class='line'>for(var i = 0; i &lt;= array.length; i++){
+</span><span class='line'>  console.log(array[i]);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>All looks straight forward enough and probably what we have written many times. The problem is that the array.length will be evaluated on every itteration of the loop. This would be compounded if we had a function there that was doing some other intensive process.</p>
+
+<p>There are a number of ways to rectify this but they generally resort to the same principle, create a variable.</p>
+
+<p>Create one inline:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for(var i = 0, var l = array.length; i &lt;= j; i++){
+</span><span class='line'>  console.log(array[i]);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Or outside the for loop:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var l = array.length
+</span><span class='line'>for(var i = 0; i &lt;= j; i++){
+</span><span class='line'>  console.log(array[i]);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>They both result in the same one but you may find one more readable than the other.</p>
+
+<p>There are plenty of other ways to get even more performance from loops in JavaScript. Just take a read of <a href="https://blogs.oracle.com/greimer/entry/best_way_to_code_a">this article</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/">Custom Nuget Feed Configuration for Azure Builds</a></h1>
     
     
@@ -95,7 +179,7 @@
   </header>
 
 
-  <div class="entry-content"><p>When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom custom Nuget feeds.</p>
+  <div class="entry-content"><p>When deploying to Azure with Nuget package restore enabled on a solution, you will run into difficulties if you have custom Nuget feeds.</p>
 
 <p>By default, Nuget will look at the default feed which at the time of writing is &#8220;https://nuget.org/api/v2/&#8221;.</p>
 
@@ -138,12 +222,61 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/01/12/javascript-for-loop-performance/">JavaScript &#8216;for loop&#8217; Performance</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/11/custom-nuget-feed-configuration-for-azure-builds/">custom nuget feed configuration for Azure builds</a>
       </li>
     
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jamiehinton">@jamiehinton</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jamiehinton',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jamiehinton", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jamiehinton" class="twitter-follow-button" data-show-count="false">Follow @jamiehinton</a>
+  
+</section>
 
 
 
@@ -161,6 +294,19 @@
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'jamiehinton';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
