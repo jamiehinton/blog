@@ -47,7 +47,7 @@ There are plenty of other ways to get even more performance from loops in JavaSc
 I really should have provided benchmarks to prove the difference. Well - I have done now:
 [jsFiddle sample](http://jsfiddle.net/B8Rer/7/)
 
-In Chrome on OS X with an array with a size of 9999999 took 16 millisecond the slow way and 13 millisecond the fast way.
+In Chrome on OS X with an array with a size of 9999999 took 16 millisecond the slow way and 13 millisecond the fast way. In FireFox it took 60 millisecond the slow way and 21 millisecond the fast way.
 
 As you can see it's not going to make a huge difference to the JavaScript you write. Basically - these metrics aren't worth much in the real world as it matters most what you are doing in the upper limit computation. 
 
