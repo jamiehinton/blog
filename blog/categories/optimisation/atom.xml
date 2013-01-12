@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Optimisation | A broad minded techy]]></title>
   <link href="http://jamiehinton.github.com/blog/blog/categories/optimisation/atom.xml" rel="self"/>
   <link href="http://jamiehinton.github.com/blog/"/>
-  <updated>2013-01-12T21:38:06+00:00</updated>
+  <updated>2013-01-12T21:40:03+00:00</updated>
   <id>http://jamiehinton.github.com/blog/</id>
   <author>
     <name><![CDATA[Jamie Hinton]]></name>
@@ -70,7 +70,7 @@
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>var l = array.length
-</span><span class='line'>for(var i = 0; i &lt;= j; i++){&lt;/p>
+</span><span class='line'>for(var i = 0; i &lt;= l; i++){&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;pre>&lt;code>console.log(array[i]);
 </span><span class='line'>&lt;/code>&lt;/pre>
