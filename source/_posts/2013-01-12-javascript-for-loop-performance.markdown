@@ -22,4 +22,24 @@ for(var i = 0; i <= array.length; i++){
 
 All looks straight forward enough and probably what we have written many times. The problem is that the array.length will be evaluated on every itteration of the loop. This would be compounded if we had a function there that was doing some other intensive process.
 
- 
+There are a number of ways to rectify this but they generally resort to the same principle, create a variable.
+
+Create one inline:
+{% codeblock %}
+for(var i = 0, var l = array.length; i <= j; i++){
+	console.log(array[i]);
+}
+{% endcodeblock %}
+
+Or outside the for loop:
+{% codeblock %}
+var l = array.length
+for(var i = 0; i <= j; i++){
+	console.log(array[i]);
+}
+{% endcodeblock %}
+
+They both result in the same one but you may find one more readable than the other.
+
+There are plenty of other ways to get even more performance from loops in JavaScript. Just take a read of [this article](https://blogs.oracle.com/greimer/entry/best_way_to_code_a).
+
