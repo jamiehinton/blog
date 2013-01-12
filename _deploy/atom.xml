@@ -4,7 +4,7 @@
   <title><![CDATA[A broad minded techy]]></title>
   <link href="http://jamiehinton.github.com/blog/atom.xml" rel="self"/>
   <link href="http://jamiehinton.github.com/blog/"/>
-  <updated>2013-01-12T22:23:36+00:00</updated>
+  <updated>2013-01-12T22:25:52+00:00</updated>
   <id>http://jamiehinton.github.com/blog/</id>
   <author>
     <name><![CDATA[Jamie Hinton]]></name>
@@ -71,7 +71,7 @@
 <h3>Update</h3>
 
 <p>I really should have provided benchmarks to prove the difference. Well - I have done now:
-<a href="http://jsfiddle.net/B8Rer/6/">jsFiddle sample</a></p>
+<a href="http://jsfiddle.net/B8Rer/7/">jsFiddle sample</a></p>
 
 <p>In Chrome on OS X with an array with a size of 9999999 took 16 millisecond the slow way and 13 millisecond the fast way.</p>
 

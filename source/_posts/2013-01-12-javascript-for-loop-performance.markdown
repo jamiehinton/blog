@@ -45,7 +45,7 @@ There are plenty of other ways to get even more performance from loops in JavaSc
 
 ###Update
 I really should have provided benchmarks to prove the difference. Well - I have done now:
-[jsFiddle sample](http://jsfiddle.net/B8Rer/6/)
+[jsFiddle sample](http://jsfiddle.net/B8Rer/7/)
 
 In Chrome on OS X with an array with a size of 9999999 took 16 millisecond the slow way and 13 millisecond the fast way.
 
