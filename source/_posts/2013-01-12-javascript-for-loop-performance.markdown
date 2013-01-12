@@ -34,7 +34,7 @@ for(var i = 0, var l = array.length; i <= l; i++){
 Or outside the for loop:
 {% codeblock %}
 var l = array.length
-for(var i = 0; i <= j; i++){
+for(var i = 0; i <= l; i++){
 	console.log(array[i]);
 }
 {% endcodeblock %}
