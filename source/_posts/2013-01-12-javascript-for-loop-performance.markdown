@@ -43,3 +43,13 @@ They both result in the same one but you may find one more readable than the oth
 
 There are plenty of other ways to get even more performance from loops in JavaScript. Just take a read of [this article](https://blogs.oracle.com/greimer/entry/best_way_to_code_a).
 
+###Update
+I really should have provided benchmarks to prove the difference. Well - I have done now:
+[jsFiddle sample](http://jsfiddle.net/B8Rer/6/)
+
+In Chrome on OS X with an array with a size of 9999999 took 16 millisecond the slow way and 13 millisecond the fast way.
+
+As you can see it's not going to make a huge difference to the JavaScript you write. Basically - these metrics aren't worth much in the real world as it matters most what you are doing in the upper limit computation. 
+
+They do however prove that the fast way example actually is faster ;)
+
